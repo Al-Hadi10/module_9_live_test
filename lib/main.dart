@@ -29,13 +29,6 @@ class _BottonColorState extends State<BottonColor> {
       selectedSize = newSize; // Update the selected size
     });
 
-    // Fluttertoast.showToast(
-    //   msg: 'Selected Size: $newSize', // Show the selected size in Snackbar
-    //   toastLength: Toast.LENGTH_SHORT,
-    //   gravity: ToastGravity.BOTTOM,
-    //   backgroundColor: Colors.grey,
-    //   textColor: Colors.white,
-    // );
   }
 
   @override
@@ -46,34 +39,55 @@ class _BottonColorState extends State<BottonColor> {
         title: Text('Size Selector'),
       ),
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () => _changeButtonColorAndShowSnackbar('Small'),
-              style: ElevatedButton.styleFrom(primary: selectedColor),
-              child: Text('S'),
-            ),
-            SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: () => _changeButtonColorAndShowSnackbar('Medium'),
-              style: ElevatedButton.styleFrom(primary: selectedColor),
-              child: Text('M'),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () => _changeButtonColorAndShowSnackbar('Large'),
-              style: ElevatedButton.styleFrom(primary: selectedColor),
-              child: Text('L'),
-            ),
-            ElevatedButton(
-              onPressed: () => _changeButtonColorAndShowSnackbar('Large'),
-              style: ElevatedButton.styleFrom(primary: selectedColor),
-              child: Text('XL'),
-            ),
+        child: ListView(
 
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: () => _changeButtonColorAndShowSnackbar('Small'),
+                  style: ElevatedButton.styleFrom(primary: selectedColor),
+                  child: Text('S'),
+                ),
+                SizedBox(height: 24),
+                ElevatedButton(
+                  onPressed: () => _changeButtonColorAndShowSnackbar('Medium'),
+                  style: ElevatedButton.styleFrom(primary: selectedColor),
+                  child: Text('M'),
+                ),
+                SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () => _changeButtonColorAndShowSnackbar('Large'),
+                  style: ElevatedButton.styleFrom(primary: selectedColor),
+                  child: Text('L'),
+                ),
+                ElevatedButton(
+                  onPressed: () => _changeButtonColorAndShowSnackbar('Large'),
+                  style: ElevatedButton.styleFrom(primary: selectedColor),
+                  child: Text('XL'),
+                ),
+
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () => _changeButtonColorAndShowSnackbar('Large'),
+                  style: ElevatedButton.styleFrom(primary: selectedColor),
+                  child: Text('XXL'),
+                ),
+                ElevatedButton(
+                  onPressed: () => _changeButtonColorAndShowSnackbar('Large'),
+                  style: ElevatedButton.styleFrom(primary: selectedColor),
+                  child: Text('XXXL'),
+                ),
+
+              ],
+            )
           ],
-        ),
+        )
 
       ),
     );
